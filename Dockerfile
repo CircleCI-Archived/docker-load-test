@@ -18,6 +18,8 @@ RUN apt-get update \
   && apt-get install elasticsearch=$ELASTICSEARCH_VERSION \
   && rm -rf /var/lib/apt/lists/*
 
+RUN xfs_mkfile 512m HalfGigfile
+
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 COPY config /usr/share/elasticsearch/config
 
