@@ -18,7 +18,7 @@ RUN apt-get update \
   && apt-get install elasticsearch=$ELASTICSEARCH_VERSION \
   && rm -rf /var/lib/apt/lists/*
 
-COPY HalfGigfile /bigfile
+COPY bigfile /bigfile
 
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 COPY config /usr/share/elasticsearch/config
