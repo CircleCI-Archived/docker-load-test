@@ -8,7 +8,7 @@ dependencies:
   override:
     - if [[ -e ~/test-cache/test.tar ]]; then docker load -i ~/test-cache/test.tar; fi
     - docker build --tag="iand675/docker-test" .
-    - mkdir ~/test-cache
+    - mkdir -p ~/test-cache
     - docker save iand675/docker-test > ~/test-cache/test.tar
 
 test:
