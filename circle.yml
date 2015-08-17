@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   override:
-    - docker build -t iand675/docker-test .
+    - docker build --tag="iand675/docker-test" .
     - mkdir ~/test-cache
     - docker export iand675/docker-test > ~/test-cache/test.tar.gz
     - docker load < ~/test-cache/test.tar.gz
