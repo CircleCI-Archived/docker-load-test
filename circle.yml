@@ -11,6 +11,5 @@ dependencies:
 
 test:
   override:
-    - echo "Wibble":
-        name: Wibble
+    - echo "Wibble"
 
