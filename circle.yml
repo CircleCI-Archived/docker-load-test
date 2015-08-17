@@ -3,11 +3,13 @@ machine:
     - docker
 
 dependencies:
+  cache_directories:
+    - "~/test-cache"
   override:
+    - if [[ -e ~/test-cache/test.tar ]]; then docker load -i ~/test-cache/test.tar; fi
     - docker build --tag="iand675/docker-test" .
     - mkdir ~/test-cache
-    - docker export iand675/docker-test > ~/test-cache/test.tar.gz
-    - docker load < ~/test-cache/test.tar.gz
+    - docker save iand675/docker-test > ~/test-cache/test.tar
 
 test:
   override:
